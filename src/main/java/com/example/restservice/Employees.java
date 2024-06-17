@@ -1,6 +1,4 @@
 package com.example.restservice;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,4 +23,3 @@ public class Employees {
         this.employeeList= employeeList;
     }
 }
-
