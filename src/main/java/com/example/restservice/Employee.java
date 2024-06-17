@@ -1,105 +1,62 @@
 
 package com.example.restservice;
 
-// Creating an entity Employee
 public class Employee {
 
-    public Employee() {}
+    private final String employee_id;
+    private final String first_name;
+    private final String last_name;
+    private final String email;
+    private final String title;
 
-    // Parameterized Constructor
-    // to assign the values
-    // to the properties of
-    // the entity
-    public Employee(
-            Integer id, String firstName,
-            String lastName, String email)
+    public Employee(String employee_id,
+                    String first_name,
+                    String last_name,
+                    String email,
+                    String title)
     {
-
-        super();
-
-        this.id = id;
-
-        this.firstName = firstName;
-
-        this.lastName = lastName;
-
+        this.employee_id = employee_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.email = email;
-
-
+        this.title = title;
     }
 
-    private Integer id;
-
-    private String firstName;
-
-    private String lastName;
-
-    private String email;
-
-    // Overriding the toString method
-    // to find all the values
     @Override
     public String toString()
     {
 
-        return "Employee [id="
-                + id + ", firstName="
-                + firstName + ", lastName="
-                + lastName + ", email="
-                + email + "]";
-
-
+        return "Employee: ID = "
+                + employee_id + ", First Name = "
+                + first_name + ", Last Name = "
+                + last_name + ", email = "
+                + email + ", title = "
+                + title;
     }
 
-    // Getters and setters of
-    // the properties
-    public Integer getId()
+    public String getId()
     {
-
-        return id;
-    }
-
-    public void setId(Integer id)
-    {
-
-        this.id = id;
+        return employee_id;
     }
 
     public String getFirstName()
     {
-
-        return firstName;
-    }
-
-    public void setFirstName(
-            String firstName)
-    {
-
-        this.firstName = firstName;
+        return first_name;
     }
 
     public String getLastName()
     {
-
-        return lastName;
-    }
-
-    public void setLastName(
-            String lastName)
-    {
-
-        this.lastName = lastName;
+        return last_name;
     }
 
     public String getEmail()
     {
-
         return email;
     }
 
-    public void setEmail(String email)
+    public String getTitle()
     {
-
-        this.email = email;
+        return title;
     }
+
 }

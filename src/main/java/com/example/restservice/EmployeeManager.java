@@ -1,68 +1,34 @@
 package com.example.restservice;
 
-import org.springframework
-        .stereotype
-        .Repository;
-
-// Importing the employees class to
-// use the defined properties
-// in this class
 import com.example.restservice.Employees;
-import com.example.restservice.Employee;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
 
 @Repository
-
-// Class to create a list
-// of employees
 public class EmployeeManager {
 
-    private static final Employees list = new Employees();
+    private static Employees list = new Employees();
 
-    // This static block is executed
-    // before executing the main
-    // block
+    // Manually initialize service to contain some employees
     static
     {
+        Employee employee1 = new Employee("1", "First1", "Last1", "Email1", "Title1");
+        Employee employee2 = new Employee("2", "First2", "Last2", "Email2", "Title2");
+        Employee employee3 = new Employee("3", "First3", "Last3", "Email3", "Title3");
 
-        // Creating a few employees
-        // and adding them to the list
-        list.getEmployeeList().add(
-                new Employee(
-                        1,
-                        "Prem",
-                        "Tiwari",
-                        "chapradreams@gmail.com"));
-
-        list.getEmployeeList().add(
-                new Employee(
-                        2, "Vikash",
-                        "Kumar",
-                        "abc@gmail.com"));
-
-        list.getEmployeeList().add(
-                new Employee(
-                        3, "Ritesh",
-                        "Ojha",
-                        "asdjf@gmail.com"));
-
-
+        list.getEmployeeList().add(employee1);
+        list.getEmployeeList().add(employee2);
+        list.getEmployeeList().add(employee3);
     }
 
-    // Method to return the list
     public Employees getAllEmployees()
     {
-
         return list;
     }
 
-
-    // Method to add an employee
-    // to the employees list
-    public void
-    addEmployee(Employee employee)
+    public void addEmployee(Employee employee)
     {
-        list.getEmployeeList()
-                .add(employee);
-
+        list.getEmployeeList().add(employee);
     }
 }
